@@ -1,16 +1,18 @@
 import React from "react";
-import {
-  Typography,
-  Grid,
-  Paper,
-  Card,
-  CardContent,
-  Divider
-} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Divider from "@material-ui/core/Divider";
 import { withStyles } from "@material-ui/core/styles";
 import teal from "@material-ui/core/colors/teal";
 import orange from "@material-ui/core/colors/orange";
-import { Magnify, Compass, Crop, Pencil, ClipboardText } from "mdi-material-ui";
+import Magnify from "mdi-material-ui/Magnify";
+import Compass from "mdi-material-ui/Compass";
+import Crop from "mdi-material-ui/Crop";
+import Pencil from "mdi-material-ui/Pencil";
+import ClipboardText from "mdi-material-ui/ClipboardText";
 
 import ContactDiv from "../contact/contactDiv";
 import PuzzleImg from "../../images/puzzle.jpeg";

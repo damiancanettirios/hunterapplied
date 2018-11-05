@@ -5,7 +5,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import { Link } from "@reach/router";
-import { Linkedin, Twitter, Medium } from "mdi-material-ui";
+import Linkedin from "mdi-material-ui/Linkedin";
+import Twitter from "mdi-material-ui/Twitter";
+import Medium from "mdi-material-ui/Medium";
 
 import whiteLogo from "../../images/logoWhite.png";
 

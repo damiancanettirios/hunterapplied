@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "@reach/router";
-import {
-  Grid,
-  Typography,
-  Paper,
-  Card,
-  CardContent,
-  Button,
-  CssBaseline
-} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
 import DirectionsBoat from "@material-ui/icons/DirectionsBoat";
 import LocalShipping from "@material-ui/icons/LocalShipping";
@@ -40,7 +38,8 @@ const styles = theme => ({
     backgroundColor: orange[900]
   },
   grantCards: {
-    backgroundColor: blueGrey[50]
+    backgroundColor: blueGrey[50],
+    minHeight: 200
   },
   row: {
     display: "flex",
@@ -94,6 +93,58 @@ const styles = theme => ({
     }
   }
 });
+
+const stages = [
+  {
+    icon: <Dvr fontSize="large" />,
+    title1: "Research &",
+    title2: "Development",
+    message:
+      "Scientific experimentation activities attempting to generate new knowledge and develop innovative products"
+  },
+  {
+    icon: <LocalAtm fontSize="large" />,
+    title1: "Market",
+    title2: "Validation",
+    message:
+      "Trials and Proofs-of-Concepts that validate the efficacy, market need or value proposition of your product"
+  },
+  {
+    icon: <LocalShipping fontSize="large" />,
+    title1: "Initial",
+    title2: "Commercialisation",
+    message:
+      "Activities that help you earn your first sales or validate the commercial viability of your business model"
+  },
+  {
+    icon: <DirectionsBoat fontSize="large" />,
+    title1: "Global",
+    title2: "Commercialisation",
+    message:
+      "Activities that help you scale your business model and export your product to international customers"
+  }
+];
+
+const process = [
+  {
+    icon: <MyLocationOutlinedIcon fontSize="large" />,
+    title: "GRANTS STRATEGY",
+    message:
+      "We find grants that fit your R&D and commercialisation objectives and build a grants strategy to access available funding"
+  },
+  {
+    icon: <EditOutlinedIcon fontSize="large" />,
+    title: "PLANNING & WRITING",
+    message:
+      "We help you frame your objectives, construct projects that meet the grant program’s guidelines and write a compelling application"
+  },
+  {
+    icon: <AssignmentOutlinedIcon fontSize="large" />,
+    title: "PROCESS MANAGEMENT",
+    message:
+      "We project manage each grant for you, including compliance and communicating with the government, to ensure a competitive final submission"
+  }
+];
 
 class Homepage extends React.Component {
   render() {
@@ -177,96 +228,35 @@ class Homepage extends React.Component {
                     direction="row"
                     alignItems="flex-start"
                   >
-                    <Grid item md={3} sm={6} xs={12}>
-                      <Card className={classes.grantCards}>
-                        <CardContent style={{ padding: 10 }}>
-                          <Typography
-                            variant="h5"
-                            style={{ height: 120 }}
-                            align="center"
+                    {stages.map(stage => (
+                      <Grid key={stage.title1} item md={3} sm={6} xs={12}>
+                        <Card key={stage.title1} className={classes.grantCards}>
+                          <CardContent
+                            key={stage.title1}
+                            style={{ padding: 10 }}
                           >
-                            <div>
-                              <Dvr fontSize="large" />
-                            </div>
-                            Research &<br />
-                            Development
-                          </Typography>
-                          <Typography variant="subtitle1" align="center">
-                            Scientific experimentation activities attempting to
-                            generate new knowledge and develop innovative
-                            products
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item md={3} sm={6} xs={12}>
-                      <Card className={classes.grantCards}>
-                        <CardContent style={{ padding: 10 }}>
-                          <Typography
-                            variant="h5"
-                            style={{ height: 120 }}
-                            align="center"
-                          >
-                            <div>
-                              <LocalAtm fontSize="large" />
-                            </div>
-                            Market
-                            <br />
-                            Validation
-                          </Typography>
-                          <Typography variant="subtitle1" align="center">
-                            Trials and Proofs-of-Concepts that validate the
-                            efficacy, market need or value proposition of your
-                            product
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item md={3} sm={6} xs={12}>
-                      <Card className={classes.grantCards}>
-                        <CardContent style={{ padding: 10 }}>
-                          <Typography
-                            variant="h5"
-                            style={{ height: 120 }}
-                            align="center"
-                          >
-                            <div>
-                              <LocalShipping fontSize="large" />
-                            </div>
-                            Initial
-                            <br />
-                            Commercialisation
-                          </Typography>
-                          <Typography variant="subtitle1" align="center">
-                            Activities that help you earn your first sales or
-                            validate the commercial viability of your business
-                            model
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item md={3} sm={6} xs={12}>
-                      <Card className={classes.grantCards}>
-                        <CardContent style={{ padding: 10 }}>
-                          <Typography
-                            variant="h5"
-                            style={{ height: 120 }}
-                            align="center"
-                          >
-                            <div>
-                              <DirectionsBoat fontSize="large" />
-                            </div>
-                            Global
-                            <br />
-                            Commercialisation
-                          </Typography>
-                          <Typography variant="subtitle1" align="center">
-                            Activities that help you scale your business model
-                            and export your product to international customers
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
+                            <Typography
+                              variant="h5"
+                              style={{ height: 120 }}
+                              align="center"
+                              key={stage.title1}
+                            >
+                              <div key={stage.title1}>{stage.icon}</div>
+                              {stage.title1}
+                              <br />
+                              {stage.title2}
+                            </Typography>
+                            <Typography
+                              key={stage.message}
+                              variant="subtitle1"
+                              align="center"
+                            >
+                              {stage.message}
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </Grid>
+                    ))}
                   </Grid>
                 </div>
               </Paper>
@@ -295,89 +285,40 @@ class Homepage extends React.Component {
                     direction="row"
                     alignItems="flex-start"
                   >
-                    <Grid item md={4} sm={12}>
-                      <Card style={{ minHeight: 270 }}>
-                        <CardContent>
-                          <Typography
-                            variant="h5"
-                            style={{ height: 120, paddingTop: 10 }}
-                            align="center"
-                          >
-                            <div className={classes.row}>
-                              <Avatar className={classes.orangeAvatar}>
-                                <MyLocationOutlinedIcon fontSize="large" />
-                              </Avatar>
-                            </div>
+                    {process.map(step => (
+                      <Grid key={step.title} item md={4} sm={12}>
+                        <Card key={step.title} style={{ minHeight: 270 }}>
+                          <CardContent key={step.title}>
+                            <Typography
+                              variant="h5"
+                              style={{ height: 120, paddingTop: 10 }}
+                              align="center"
+                              key={step.title}
+                            >
+                              <div key={step.title} className={classes.row}>
+                                <Avatar
+                                  key={step.title}
+                                  className={classes.orangeAvatar}
+                                >
+                                  {step.icon}
+                                </Avatar>
+                              </div>
 
-                            <div style={{ marginTop: 10 }}>GRANTS STRATEGY</div>
-                          </Typography>
-                          <Typography
-                            variant="subtitle1"
-                            style={{ marginTop: 20 }}
-                          >
-                            We find grants that fit your R&D and
-                            commercialisation objectives and build a grants
-                            strategy to access available funding
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item md={4} sm={12}>
-                      <Card style={{ minHeight: 270 }}>
-                        <CardContent>
-                          <Typography
-                            variant="h5"
-                            style={{ height: 120, paddingTop: 10 }}
-                            align="center"
-                          >
-                            <div className={classes.row}>
-                              <Avatar className={classes.orangeAvatar}>
-                                <EditOutlinedIcon fontSize="large" />
-                              </Avatar>
-                            </div>
-                            <div style={{ marginTop: 10 }}>
-                              PLANNING & WRITING
-                            </div>
-                          </Typography>
-                          <Typography
-                            variant="subtitle1"
-                            style={{ marginTop: 20 }}
-                          >
-                            We help you frame your objectives, construct
-                            projects that meet the grant program’s guidelines
-                            and write a compelling application
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
-                    <Grid item md={4} sm={12}>
-                      <Card style={{ minHeight: 270 }}>
-                        <CardContent>
-                          <Typography
-                            variant="h5"
-                            style={{ height: 120, paddingTop: 10 }}
-                            align="center"
-                          >
-                            <div className={classes.row}>
-                              <Avatar className={classes.orangeAvatar}>
-                                <AssignmentOutlinedIcon fontSize="large" />
-                              </Avatar>
-                            </div>
-                            <div style={{ marginTop: 10 }}>
-                              PROCESS MANAGEMENT
-                            </div>
-                          </Typography>
-                          <Typography
-                            variant="subtitle1"
-                            style={{ marginTop: 20 }}
-                          >
-                            We project manage each grant for you, including
-                            compliance and communicating with the government, to
-                            ensure a competitive final submission
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    </Grid>
+                              <div key={step.message} style={{ marginTop: 10 }}>
+                                {step.title}
+                              </div>
+                            </Typography>
+                            <Typography
+                              key={step.message}
+                              variant="subtitle1"
+                              style={{ marginTop: 20 }}
+                            >
+                              {step.message}
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </Grid>
+                    ))}
                   </Grid>
                 </div>
               </div>

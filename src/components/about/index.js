@@ -3,7 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
-import { Linkedin } from "mdi-material-ui";
+import Linkedin from "mdi-material-ui/Linkedin";
 import EmailIcon from "@material-ui/icons/Email";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "@reach/router";
@@ -74,42 +74,6 @@ const leaders = [
   }
 ];
 
-function LeaderContainer(leader) {
-  const { name, background, education, linkedinUrl, email, role } = leader;
-  return (
-    <div key={name} style={{ marginTop: 20, marginBottom: 20 }}>
-      <Typography variant="h5" align="left">
-        <Grid
-          container
-          justify="flex-start"
-          direction="row"
-          alignItems="center"
-        >
-          <div key={name} style={{ marginRight: 6 }}>
-            {name}
-          </div>
-          <div key={role}>
-            <IconButton component={Link} to={linkedinUrl}>
-              <Linkedin />
-            </IconButton>
-          </div>
-          <div key={leader.index}>
-            <IconButton component={Link} to={email}>
-              <EmailIcon />
-            </IconButton>
-          </div>
-        </Grid>
-      </Typography>
-      <Typography variant="subtitle1" align="left">
-        {background}
-      </Typography>
-      <Typography variant="body1" align="left">
-        Education: {education}
-      </Typography>
-    </div>
-  );
-}
-
 class About extends React.Component {
   render() {
     const { classes } = this.props;
@@ -167,7 +131,41 @@ class About extends React.Component {
               </Typography>
               <Typography variant="h5" align="left" className={classes.content}>
                 Our Leadership Team
-                {leaders.map(leader => LeaderContainer(leader))}
+                {leaders.map(leader => (
+                  <div
+                    key={leader.name}
+                    style={{ marginTop: 20, marginBottom: 20 }}
+                  >
+                    <Typography variant="h5" align="left">
+                      <Grid
+                        container
+                        justify="flex-start"
+                        direction="row"
+                        alignItems="center"
+                      >
+                        <div key={leader.name} style={{ marginRight: 6 }}>
+                          {leader.name}
+                        </div>
+                        <div key={leader.role}>
+                          <IconButton component={Link} to={leader.linkedinUrl}>
+                            <Linkedin />
+                          </IconButton>
+                        </div>
+                        <div key={leader.index}>
+                          <IconButton component={Link} to={leader.email}>
+                            <EmailIcon />
+                          </IconButton>
+                        </div>
+                      </Grid>
+                    </Typography>
+                    <Typography variant="subtitle1" align="left">
+                      {leader.background}
+                    </Typography>
+                    <Typography variant="body1" align="left">
+                      Education: {leader.education}
+                    </Typography>
+                  </div>
+                ))}
               </Typography>
             </Paper>
           </Grid>
