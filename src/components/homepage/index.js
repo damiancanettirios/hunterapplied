@@ -38,8 +38,7 @@ const styles = theme => ({
     backgroundColor: orange[900]
   },
   grantCards: {
-    backgroundColor: blueGrey[50],
-    minHeight: 200
+    backgroundColor: blueGrey[50]
   },
   row: {
     display: "flex",
@@ -347,12 +346,9 @@ class Homepage extends React.Component {
                     direction="row"
                     alignItems="flex-start"
                   >
-                    <Grid item xl={6} l={24}>
+                    <Grid item md={6} sm={24}>
                       <Card style={{ minHeight: 700, marginTop: 10 }}>
-                        <div
-                          className={classes.grantCards}
-                          style={{ height: 60 }}
-                        >
+                        <div className={classes.grantCards}>
                           <Typography
                             variant="h5"
                             align="center"
@@ -377,12 +373,9 @@ class Homepage extends React.Component {
                         </CardContent>
                       </Card>
                     </Grid>
-                    <Grid item xl={6} l={24}>
+                    <Grid item md={6} sm={24}>
                       <Card style={{ minHeight: 700, marginTop: 10 }}>
-                        <div
-                          className={classes.grantCards}
-                          style={{ height: 60 }}
-                        >
+                        <div className={classes.grantCards}>
                           <Typography
                             variant="h5"
                             align="center"
