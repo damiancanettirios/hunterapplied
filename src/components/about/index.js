@@ -1,5 +1,5 @@
 import React from "react";
-import lightbulb from "./lightbulb.jpeg";
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
@@ -11,6 +11,46 @@ import { Link } from "@reach/router";
 import ContactDiv from "../contact/contactDiv";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
+import lightbulb from "../../images/lightbulb.jpeg";
+
+const styles = theme => ({
+  layout: {
+    width: "auto",
+    backgroundColor: "#fff"
+  },
+  message: {
+    marginTop: 50,
+    padding: 40,
+    marginBottom: 50
+  },
+  mission: {
+    padding: 30
+  },
+  content: {
+    margin: 10
+  },
+  whoDiv: {
+    padding: 40
+  },
+  [theme.breakpoints.down("sm")]: {
+    imgHide: {
+      display: "none"
+    },
+    message: {
+      marginTop: 30,
+      padding: 20,
+      marginBottom: 20,
+      textAlign: "center"
+    },
+    mission: {
+      padding: 10
+    },
+    whoDiv: {
+      marginTop: 20,
+      padding: 20
+    }
+  }
+});
 
 const leaders = [
   {
@@ -72,58 +112,60 @@ function LeaderContainer(leader) {
 
 class About extends React.Component {
   render() {
+    const { classes } = this.props;
     return (
       <React.Fragment>
-        <Header />
-        {/* Hero */}
-        <div style={{ backgroundColor: "#fff" }}>
+        <div className={classes.layout}>
+          <Header />
+          {/* Hero */}
           <Grid container spacing={24} alignItems="center">
-            <Grid item xs={6}>
-              <Typography
-                variant="h2"
-                style={{ marginTop: 50, padding: 40, marginBottom: 50 }}
-              >
+            <Grid item md={8} sm={12}>
+              <Typography variant="h2" className={classes.message}>
                 We help innovative companies access government incentives and
                 grants
               </Typography>
             </Grid>
-            <Grid container item xs={6} justify="center" alignItems="center">
-              <img src={lightbulb} alt="light blub" />
+            <Grid container item md={4} justify="center" alignItems="center">
+              <img
+                src={lightbulb}
+                alt="light blub"
+                className={classes.imgHide}
+              />
             </Grid>
           </Grid>
         </div>
         {/* Misson */}
-        <div
-          style={{ backgroundColor: "#4DB6AC", minHeight: 200, padding: 30 }}
-        >
-          <Typography variant="h3" align="center" style={{ margin: 10 }}>
-            OUR MISSION
-          </Typography>
-          <Typography variant="h5" align="center" style={{ margin: 20 }}>
-            We believe government incentive and grant programs should support
-            the most innovative projects to accelerate the next generation of
-            new knowledge, the evolution of industries and the creation of
-            employment and economic opportunities.
-          </Typography>
-          <Typography variant="h5" align="center" style={{ margin: 20 }}>
-            Our mission is to elevate the growth potential of innovative
-            projects by maximising their access to government funding.
-          </Typography>
+        <div style={{ backgroundColor: "#4DB6AC" }}>
+          <div className={classes.mission}>
+            <Typography variant="h3" align="center" className={classes.content}>
+              OUR MISSION
+            </Typography>
+            <Typography variant="h5" align="center" className={classes.content}>
+              We believe government incentive and grant programs should support
+              the most innovative projects to accelerate the next generation of
+              new knowledge, the evolution of industries and the creation of
+              employment and economic opportunities.
+            </Typography>
+            <Typography variant="h5" align="center" className={classes.content}>
+              Our mission is to elevate the growth potential of innovative
+              projects by maximising their access to government funding.
+            </Typography>
+          </div>
         </div>
         {/* Who Are We */}
-        <div style={{ margin: 40 }}>
+        <div className={classes.whoDiv}>
           <Grid container spacing={24}>
             <Paper>
-              <Typography variant="h4" align="left" style={{ margin: 20 }}>
+              <Typography variant="h4" align="left" className={classes.content}>
                 OUR TEAM
               </Typography>
-              <Typography variant="h5" align="left" style={{ margin: 20 }}>
+              <Typography variant="h5" align="left" className={classes.content}>
                 Our consultants are dedicated to your success and work directly
                 with you to build competitive and compliant grant submissions
                 that will communicate the value of your project to relevant
                 stakeholders.
               </Typography>
-              <Typography variant="h5" align="left" style={{ margin: 20 }}>
+              <Typography variant="h5" align="left" className={classes.content}>
                 Our Leadership Team
                 {leaders.map(leader => LeaderContainer(leader))}
               </Typography>
@@ -138,4 +180,4 @@ class About extends React.Component {
   }
 }
 
-export default About;
+export default withStyles(styles)(About);

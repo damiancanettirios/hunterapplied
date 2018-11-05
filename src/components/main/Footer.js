@@ -7,9 +7,9 @@ import Divider from "@material-ui/core/Divider";
 import { Link } from "@reach/router";
 import { Linkedin, Twitter, Medium } from "mdi-material-ui";
 
-import whiteLogo from "./logoWhite.png";
+import whiteLogo from "../../images/logoWhite.png";
 
-const styles = {
+const styles = theme => ({
   footer: {
     color: "#fff"
   },
@@ -24,8 +24,13 @@ const styles = {
     "&:hover": {
       color: orange[500]
     }
+  },
+  [theme.breakpoints.down("sm")]: {
+    footerCenter: {
+      textAlign: "center"
+    }
   }
-};
+});
 
 class Footer extends React.Component {
   render() {
@@ -40,12 +45,12 @@ class Footer extends React.Component {
               align-items="flex-start"
               style={{ padding: 30, minHeight: 100 }}
             >
-              <Grid item xs={3}>
+              <Grid item md={3} sm={4} xs={12} className={classes.footerCenter}>
                 <Link to="/">
                   <img src={whiteLogo} alt="Hunter Applied Research" />
                 </Link>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item md={3} sm={4} xs={12} className={classes.footerCenter}>
                 <Typography variant="subtitle2" className={classes.footer}>
                   <b>COMPANY</b>
                 </Typography>
@@ -66,7 +71,7 @@ class Footer extends React.Component {
                   </Typography>
                 </Link>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item md={3} sm={4} xs={12} className={classes.footerCenter}>
                 <Typography variant="subtitle2" className={classes.footer}>
                   <b>GRANTS</b>
                 </Typography>
@@ -79,7 +84,7 @@ class Footer extends React.Component {
                   </Typography>
                 </Link>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item md={3} xs={12}>
                 <Grid
                   container
                   spacing={24}

@@ -1,4 +1,5 @@
 import React from "react";
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
@@ -7,6 +8,22 @@ import CardContent from "@material-ui/core/CardContent";
 import ContactDiv from "../contact/contactDiv";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
+
+const styles = theme => ({
+  layout: {
+    width: "auto"
+  },
+  mainDiv: {
+    padding: 40,
+    backgroundColor: "#fff"
+  },
+  [theme.breakpoints.down("sm")]: {
+    mainDiv: {
+      padding: 10,
+      backgroundColor: "#fff"
+    }
+  }
+});
 
 const programs = [
   {
@@ -63,7 +80,7 @@ function ProgramRender(program) {
   const { name, funder, description, type, amount } = program;
   return (
     <React.Fragment>
-      <Grid key={name} item xs={6}>
+      <Grid key={name} item sm={6} xs={12}>
         <Card key={name} style={{ margin: 10, backgroundColor: "#FAFAFA" }}>
           <CardContent>
             <Typography variant="h5" style={{ marginBottom: 8 }}>
@@ -84,30 +101,37 @@ function ProgramRender(program) {
   );
 }
 
-export default () => {
-  return (
-    <React.Fragment>
-      <Header />
-      <div style={{ padding: 40, backgroundColor: "#fff" }}>
-        <Typography variant="h2" align="center">
-          Programs
-        </Typography>
-        <Typography variant="h5" align="center">
-          Selected grant programs we have managed for our client
-        </Typography>
-        <Grid
-          container
-          spacing={12}
-          direction="row"
-          justify="flex-start"
-          alignItems="flex-start"
-          wrap
-        >
-          {programs.map(program => ProgramRender(program))}
-        </Grid>
-      </div>
-      <ContactDiv />
-      <Footer />
-    </React.Fragment>
-  );
-};
+class Programs extends React.Component {
+  render() {
+    const { classes } = this.props;
+    return (
+      <React.Fragment>
+        <div className={classes.layout}>
+          <Header />
+          <div className={classes.mainDiv}>
+            <Typography variant="h2" align="center">
+              Programs
+            </Typography>
+            <Typography variant="h5" align="center" style={{ marginTop: 10 }}>
+              Selected grant programs we have managed for our client
+            </Typography>
+            <Grid
+              container
+              spacing={12}
+              direction="row"
+              justify="flex-start"
+              alignItems="flex-start"
+              wrap
+            >
+              {programs.map(program => ProgramRender(program))}
+            </Grid>
+          </div>
+          <ContactDiv />
+          <Footer />
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+export default withStyles(styles)(Programs);
