@@ -1,10 +1,12 @@
 {
   "files.watcherExclude": {
-    "**/build": true
+    "**/build/**": true,
+    "**/awscli-bundle/**": true
   },
   "search.exclude": {
     "**/build": true
   },
-  "prettier.requireConfig": true,
-  "editor.formatOnSave": true
+  "[javascript]": {
+    "editor.formatOnSave": true
+}
 }

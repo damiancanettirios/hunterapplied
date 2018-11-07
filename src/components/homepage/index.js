@@ -12,18 +12,15 @@ import DirectionsBoat from "@material-ui/icons/DirectionsBoat";
 import LocalShipping from "@material-ui/icons/LocalShipping";
 import LocalAtm from "@material-ui/icons/LocalAtm";
 import Dvr from "@material-ui/icons/Dvr";
-// import MailOutline from "@material-ui/icons/MailOutline";
-// import Phone from "@material-ui/icons/Phone";
 import MyLocationOutlinedIcon from "@material-ui/icons/MyLocationOutlined";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import AssignmentOutlinedIcon from "@material-ui/icons/AssignmentOutlined";
 import Avatar from "@material-ui/core/Avatar";
 import orange from "@material-ui/core/colors/orange";
 import blueGrey from "@material-ui/core/colors/blueGrey";
+import Hidden from "@material-ui/core/Hidden";
 
 import cactus from "../../images/cactus.jpeg";
-// import HubspotForm from "../contact/hubspot";
-// import CalendlyForm from "../contact/calendly";
 import ContactUs from "../contact/contactDiv";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
@@ -75,9 +72,6 @@ const styles = theme => ({
     }
   },
   [theme.breakpoints.down("sm")]: {
-    imgHide: {
-      display: "none"
-    },
     paperWide: {
       margin: 10,
       padding: 10
@@ -196,14 +190,21 @@ class Homepage extends React.Component {
                   >
                     Our Approach
                   </Button>
-                  <Button variant="contained" color="primary" href="#contact">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    component={Link}
+                    to="/contact"
+                  >
                     Contact Us
                   </Button>
                 </Typography>
               </Grid>
-              <Grid item md={6} sm={12} container justify="center">
-                <img src={cactus} alt="cactus" className={classes.imgHide} />
-              </Grid>
+              <Hidden smDown>
+                <Grid item md={6} sm={12} container justify="center">
+                  <img src={cactus} alt="cactus" />
+                </Grid>
+              </Hidden>
             </Grid>
           </div>
           {/* Why grants */}

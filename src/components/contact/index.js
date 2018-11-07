@@ -5,12 +5,14 @@ import Tab from "@material-ui/core/Tab";
 import PhoneIcon from "@material-ui/icons/Phone";
 import MailOutline from "@material-ui/icons/MailOutline";
 import Grid from "@material-ui/core/Grid";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import Typography from "@material-ui/core/Typography";
 
-import Hubspot from "./hubspot";
-import Calendly from "./calendly";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
+
+const Hubspot = React.lazy(() => import("./hubspot"));
+const Calendly = React.lazy(() => import("./calendly"));
 
 class Contact extends React.Component {
   state = {
@@ -56,10 +58,18 @@ class Contact extends React.Component {
                 <Tab label="Message Use" icon={<MailOutline />} />
                 <Tab label="Scehdule A Call" icon={<PhoneIcon />} />
               </Tabs>
-              <div style={{ margin: 20 }}>
-                {value === 0 && <Hubspot />}
-                {value === 1 && <Calendly />}
-              </div>
+              <React.Suspense
+                fallback={
+                  <Grid container justify="center" style={{ marginTop: 30 }}>
+                    <CircularProgress />
+                  </Grid>
+                }
+              >
+                <div style={{ margin: 20 }}>
+                  {value === 0 && <Hubspot />}
+                  {value === 1 && <Calendly />}
+                </div>
+              </React.Suspense>
             </Paper>
           </Grid>
         </div>

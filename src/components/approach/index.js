@@ -13,6 +13,7 @@ import Compass from "mdi-material-ui/Compass";
 import Crop from "mdi-material-ui/Crop";
 import Pencil from "mdi-material-ui/Pencil";
 import ClipboardText from "mdi-material-ui/ClipboardText";
+import Hidden from "@material-ui/core/Hidden";
 
 import ContactDiv from "../contact/contactDiv";
 import PuzzleImg from "../../images/puzzle.jpeg";
@@ -60,9 +61,6 @@ const styles = theme => ({
     backgroundColor: "#fff"
   },
   [theme.breakpoints.down("sm")]: {
-    imgHide: {
-      display: "none"
-    },
     heroTitle: {
       marginTop: 50,
       marginBottom: 20,
@@ -182,9 +180,11 @@ class Approach extends React.Component {
                 needs.
               </Typography>
             </Grid>
-            <Grid item md={6} className={classes.imgHide}>
-              <img src={PuzzleImg} alt="puzzle" className={classes.imgHide} />
-            </Grid>
+            <Hidden smDown>
+              <Grid item md={6}>
+                <img src={PuzzleImg} alt="puzzle" />
+              </Grid>
+            </Hidden>
           </Grid>
         </div>
 

@@ -6,6 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import Linkedin from "mdi-material-ui/Linkedin";
 import EmailIcon from "@material-ui/icons/Email";
 import IconButton from "@material-ui/core/IconButton";
+import Hidden from "@material-ui/core/Hidden";
 import { Link } from "@reach/router";
 
 import ContactDiv from "../contact/contactDiv";
@@ -33,9 +34,6 @@ const styles = theme => ({
     padding: 40
   },
   [theme.breakpoints.down("sm")]: {
-    imgHide: {
-      display: "none"
-    },
     message: {
       marginTop: 30,
       padding: 20,
@@ -89,13 +87,11 @@ class About extends React.Component {
                 grants
               </Typography>
             </Grid>
-            <Grid container item md={4} justify="center" alignItems="center">
-              <img
-                src={lightbulb}
-                alt="light blub"
-                className={classes.imgHide}
-              />
-            </Grid>
+            <Hidden smDown>
+              <Grid container item md={4} justify="center" alignItems="center">
+                <img src={lightbulb} alt="light blub" />
+              </Grid>
+            </Hidden>
           </Grid>
         </div>
         {/* Misson */}
