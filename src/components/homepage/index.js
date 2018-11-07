@@ -12,8 +12,8 @@ import DirectionsBoat from "@material-ui/icons/DirectionsBoat";
 import LocalShipping from "@material-ui/icons/LocalShipping";
 import LocalAtm from "@material-ui/icons/LocalAtm";
 import Dvr from "@material-ui/icons/Dvr";
-import MailOutline from "@material-ui/icons/MailOutline";
-import Phone from "@material-ui/icons/Phone";
+// import MailOutline from "@material-ui/icons/MailOutline";
+// import Phone from "@material-ui/icons/Phone";
 import MyLocationOutlinedIcon from "@material-ui/icons/MyLocationOutlined";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import AssignmentOutlinedIcon from "@material-ui/icons/AssignmentOutlined";
@@ -22,8 +22,9 @@ import orange from "@material-ui/core/colors/orange";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 
 import cactus from "../../images/cactus.jpeg";
-import HubspotForm from "../contact/hubspot";
-import CalendlyForm from "../contact/calendly";
+// import HubspotForm from "../contact/hubspot";
+// import CalendlyForm from "../contact/calendly";
+import ContactUs from "../contact/contactDiv";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
 
@@ -324,7 +325,8 @@ class Homepage extends React.Component {
             </Grid>
           </div>
           {/* Contact Us */}
-          <div id="contact" style={{ padding: 40 }}>
+          <ContactUs />
+          {/* <div id="contact" style={{ padding: 40 }}>
             <Grid container spacing={24} justify="center">
               <div>
                 <Typography variant="h5" align="center">
@@ -396,9 +398,9 @@ class Homepage extends React.Component {
                           </Typography>
                         </div>
                         <CardContent>
-                          {/* <!-- Calendly inline widget begin --> */}
+                         
                           <CalendlyForm />
-                          {/* <!-- Calendly inline widget end --> */}
+                          
                         </CardContent>
                       </Card>
                     </Grid>
@@ -406,7 +408,7 @@ class Homepage extends React.Component {
                 </div>
               </div>
             </Grid>
-          </div>
+          </div> */}
           <Footer />
         </div>
       </React.Fragment>

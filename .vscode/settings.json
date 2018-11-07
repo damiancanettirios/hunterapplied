@@ -4,5 +4,7 @@
   },
   "search.exclude": {
     "**/build": true
-  }
+  },
+  "prettier.requireConfig": true,
+  "editor.formatOnSave": true
 }

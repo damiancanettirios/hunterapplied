@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { Router } from "@reach/router";
-
 import HomePage from "./components/homepage";
 import About from "./components/about";
 import Approach from "./components/approach";
