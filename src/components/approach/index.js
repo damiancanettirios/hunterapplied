@@ -94,26 +94,31 @@ const styles = theme => ({
 
 const approach = [
   {
+    id: 1,
     title: "Learn",
     icon: <Magnify />,
     message: "Learn about your research, operations and objectives"
   },
   {
+    id: 2,
     title: "Tailor",
     icon: <Compass />,
     message: "Tailor a grants strategy to your R&D and commercial roadmap"
   },
   {
+    id: 3,
     title: "Frame",
     icon: <Crop />,
     message: "Frame projects for a competitive grant applications"
   },
   {
+    id: 4,
     title: "Write",
     icon: <Pencil />,
     message: "Complete and coordinate grant application and submission"
   },
   {
+    id: 5,
     title: "Manage",
     icon: <ClipboardText />,
     message:
@@ -122,12 +127,12 @@ const approach = [
 ];
 
 function ListApproach(el) {
-  const { title, icon, message } = el;
+  const { id, title, icon, message } = el;
   return (
-    <Paper key={title} style={{ margin: 20, padding: 10 }}>
+    <Paper key={id} style={{ margin: 20, padding: 10 }}>
       <Grid
         container
-        key={el}
+        key={id}
         direction="row"
         alignItems="center"
         justify="space-between"

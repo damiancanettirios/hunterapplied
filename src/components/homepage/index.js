@@ -90,6 +90,7 @@ const styles = theme => ({
 
 const stages = [
   {
+    id: 1,
     icon: <Dvr fontSize="large" />,
     title1: "Research &",
     title2: "Development",
@@ -97,6 +98,7 @@ const stages = [
       "Scientific experimentation activities attempting to generate new knowledge and develop innovative products"
   },
   {
+    id: 2,
     icon: <LocalAtm fontSize="large" />,
     title1: "Market",
     title2: "Validation",
@@ -104,6 +106,7 @@ const stages = [
       "Trials and Proofs-of-Concepts that validate the efficacy, market need or value proposition of your product"
   },
   {
+    id: 3,
     icon: <LocalShipping fontSize="large" />,
     title1: "Initial",
     title2: "Commercialisation",
@@ -111,6 +114,7 @@ const stages = [
       "Activities that help you earn your first sales or validate the commercial viability of your business model"
   },
   {
+    id: 4,
     icon: <DirectionsBoat fontSize="large" />,
     title1: "Global",
     title2: "Commercialisation",
@@ -121,18 +125,21 @@ const stages = [
 
 const process = [
   {
+    id: 1,
     icon: <MyLocationOutlinedIcon fontSize="large" />,
     title: "GRANTS STRATEGY",
     message:
       "We find grants that fit your R&D and commercialisation objectives and build a grants strategy to access available funding"
   },
   {
+    id: 2,
     icon: <EditOutlinedIcon fontSize="large" />,
     title: "PLANNING & WRITING",
     message:
       "We help you frame your objectives, construct projects that meet the grant program’s guidelines and write a compelling application"
   },
   {
+    id: 3,
     icon: <AssignmentOutlinedIcon fontSize="large" />,
     title: "PROCESS MANAGEMENT",
     message:
@@ -230,12 +237,9 @@ class Homepage extends React.Component {
                     alignItems="flex-start"
                   >
                     {stages.map(stage => (
-                      <Grid key={stage.title1} item md={3} sm={6} xs={12}>
-                        <Card key={stage.title1} className={classes.grantCards}>
-                          <CardContent
-                            key={stage.title1}
-                            style={{ padding: 10 }}
-                          >
+                      <Grid key={stage.id} item md={3} sm={6} xs={12}>
+                        <Card key={stage.id} className={classes.grantCards}>
+                          <CardContent key={stage.id} style={{ padding: 10 }}>
                             <Typography
                               variant="h5"
                               style={{ height: 120 }}
@@ -287,9 +291,9 @@ class Homepage extends React.Component {
                     alignItems="flex-start"
                   >
                     {process.map(step => (
-                      <Grid key={step.title} item md={4} sm={12}>
-                        <Card key={step.title} style={{ minHeight: 270 }}>
-                          <CardContent key={step.title}>
+                      <Grid key={step.id} item md={4} sm={12}>
+                        <Card key={step.id} style={{ minHeight: 270 }}>
+                          <CardContent key={step.id}>
                             <Typography
                               variant="h5"
                               style={{ height: 120, paddingTop: 10 }}

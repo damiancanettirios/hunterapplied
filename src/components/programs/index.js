@@ -27,6 +27,7 @@ const styles = theme => ({
 
 const programs = [
   {
+    id: 1,
     name: "Research & Development Tax Incentive (R&DTI)",
     funder: "Federal",
     description:
@@ -35,6 +36,7 @@ const programs = [
     amount: "43.5% of eligible expenditures up to $4m"
   },
   {
+    id: 2,
     name: "Collaborative Research Centres Projects (CRC-P)",
     funder: "Federal",
     description:
@@ -43,6 +45,7 @@ const programs = [
     amount: "up to $3m"
   },
   {
+    id: 3,
     name: "Regional Jobs and Infrastructure Programs",
     funder: "Federal OR State",
     description:
@@ -51,6 +54,7 @@ const programs = [
     amount: "varies on program (typically $250k-$1m)"
   },
   {
+    id: 4,
     name: "Department of Health Programs",
     funder: "Federal OR State",
     description:
@@ -59,6 +63,7 @@ const programs = [
     amount: "varies on program (typically $250k-$1m)"
   },
   {
+    id: 5,
     name: "Export Market Development Grant (EMDG)",
     funder: "Federal",
     description:
@@ -67,6 +72,7 @@ const programs = [
     amount: "50% of eligible expenditures up to $150k (only $40k guaranteed)"
   },
   {
+    id: 6,
     name: "Accelerating Commercialisation",
     funder: "Federal",
     description:
@@ -77,12 +83,12 @@ const programs = [
 ];
 
 function ProgramRender(program) {
-  const { name, funder, description, type, amount } = program;
+  const { id, name, funder, description, type, amount } = program;
   return (
     <React.Fragment>
-      <Grid key={name} item sm={6} xs={12}>
-        <Card key={name} style={{ margin: 10, backgroundColor: "#FAFAFA" }}>
-          <CardContent>
+      <Grid key={id} item sm={6} xs={12}>
+        <Card key={id} style={{ margin: 10, backgroundColor: "#FAFAFA" }}>
+          <CardContent key={id}>
             <Typography variant="h5" style={{ marginBottom: 8 }}>
               {name}
             </Typography>
