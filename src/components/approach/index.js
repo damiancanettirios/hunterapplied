@@ -109,13 +109,13 @@ const approach = [
     id: 3,
     title: "Frame",
     icon: <Crop />,
-    message: "Frame projects for a competitive grant applications"
+    message: "Frame projects for competitive grant applications"
   },
   {
     id: 4,
     title: "Write",
     icon: <Pencil />,
-    message: "Complete and coordinate grant application and submission"
+    message: "Complete and coordinate grant application writing and submission"
   },
   {
     id: 5,
@@ -180,9 +180,9 @@ class Approach extends React.Component {
                 We construct successful grants
               </Typography>
               <Typography variant="h5" className={classes.heroText}>
-                Government grants can be like a confusing puzzle. We operate as
-                your grants department and build a tailored approach for your
-                needs.
+                Government grants can be a confusing puzzle. We operate as your
+                grants department, help plan an approach tailored to your needs
+                and piece together successful submissions.
               </Typography>
             </Grid>
             <Hidden smDown>

@@ -64,7 +64,7 @@ const leaders = [
   {
     name: "Elliot Briels",
     background:
-      "Elliot leads the entitlement grants service line at Hunter Applied Research. He has helped clients for the last six years claim the R&D Tax Incentive and build grants strategies. Elliot is currently a Director at Hunter & Briels, a boutique grants consultancy, and previously held roles in technology start-ups and digital agencies.",
+      "Elliot leads the entitlement grants service line at Hunter Applied Research. For the last six years, he has helped clients claim the R&D Tax Incentive and build strategies to access a wide variety of grants and incentive programs. Elliot previously held roles at technology start-ups and digital agencies.",
     education: "B.Commerce & B.Law from the University of New South Wales",
     linkedinUrl: "https://www.linkedin.com/in/elliot-briels-a1037954/",
     role: "Principal Consultant",

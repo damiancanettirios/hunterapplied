@@ -224,7 +224,7 @@ class Homepage extends React.Component {
                   project
                 </Typography>
                 <Typography variant="subtitle1" style={{ marginTop: 20 }}>
-                  Every year, billions of government funding is distributed to
+                  Every year, billions in government funding are distributed to
                   companies, researchers and industry consortiums to conduct R&D
                   and commercialise innovative products, services and processes
                 </Typography>
