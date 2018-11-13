@@ -55,8 +55,8 @@ class Contact extends React.Component {
                 centered
                 style={{ marginBottom: 10 }}
               >
-                <Tab label="Message Use" icon={<MailOutline />} />
-                <Tab label="Scehdule A Call" icon={<PhoneIcon />} />
+                <Tab label="Message Us" icon={<MailOutline />} />
+                <Tab label="Schedule A Call" icon={<PhoneIcon />} />
               </Tabs>
               <React.Suspense
                 fallback={
