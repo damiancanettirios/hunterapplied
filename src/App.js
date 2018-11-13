@@ -9,7 +9,7 @@ import About from "./components/about";
 import Approach from "./components/approach";
 import Programs from "./components/programs";
 
-import withRoot from "./withRoot";
+import withRoot from "./components/withRoot";
 
 const Contact = React.lazy(() => import("./components/contact"));
 
