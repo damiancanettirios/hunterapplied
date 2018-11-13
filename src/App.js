@@ -9,6 +9,8 @@ import About from "./components/about";
 import Approach from "./components/approach";
 import Programs from "./components/programs";
 
+import withRoot from "./withRoot";
+
 const Contact = React.lazy(() => import("./components/contact"));
 
 class App extends React.Component {
@@ -35,4 +37,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRoot(App);
