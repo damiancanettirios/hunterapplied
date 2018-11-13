@@ -20,6 +20,8 @@ import PuzzleImg from "../../images/puzzle.jpeg";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
 
+import withRoot from "../withRoot";
+
 const styles = theme => ({
   serviceModel: {
     backgroundColor: teal[500],
@@ -316,4 +318,4 @@ class Approach extends React.Component {
   }
 }
 
-export default withStyles(styles)(Approach);
+export default withRoot(withStyles(styles)(Approach));

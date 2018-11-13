@@ -5,6 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Link } from "@reach/router";
 
+import withRoot from "../withRoot";
+
 const styles = theme => ({
   layout: {
     width: "auto",
@@ -52,4 +54,4 @@ class Contact extends React.Component {
   }
 }
 
-export default withStyles(styles)(Contact);
+export default withRoot(withStyles(styles)(Contact));

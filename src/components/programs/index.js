@@ -9,6 +9,8 @@ import ContactDiv from "../contact/contactDiv";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
 
+import withRoot from "../withRoot";
+
 const styles = theme => ({
   layout: {
     width: "auto"
@@ -140,4 +142,4 @@ class Programs extends React.Component {
   }
 }
 
-export default withStyles(styles)(Programs);
+export default withRoot(withStyles(styles)(Programs));

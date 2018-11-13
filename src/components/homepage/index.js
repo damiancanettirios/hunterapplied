@@ -25,6 +25,8 @@ import ContactUs from "../contact/contactDiv";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
 
+import withRoot from "../withRoot";
+
 const styles = theme => ({
   layout: {
     width: "auto"
@@ -421,4 +423,4 @@ class Homepage extends React.Component {
   }
 }
 
-export default withStyles(styles)(Homepage);
+export default withRoot(withStyles(styles)(Homepage));

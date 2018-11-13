@@ -11,6 +11,8 @@ import Typography from "@material-ui/core/Typography";
 import Footer from "../main/Footer";
 import Header from "../main/Header";
 
+import withRoot from "../withRoot";
+
 const Hubspot = React.lazy(() => import("./hubspot"));
 const Calendly = React.lazy(() => import("./calendly"));
 
@@ -79,4 +81,4 @@ class Contact extends React.Component {
   }
 }
 
-export default Contact;
+export default withRoot(Contact);

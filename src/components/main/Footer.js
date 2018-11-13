@@ -10,6 +10,7 @@ import Twitter from "mdi-material-ui/Twitter";
 import Medium from "mdi-material-ui/Medium";
 
 import whiteLogo from "../../images/logoWhite.png";
+import withRoot from "../withRoot";
 
 const styles = theme => ({
   footer: {
@@ -151,4 +152,4 @@ class Footer extends React.Component {
   }
 }
 
-export default withStyles(styles)(Footer);
+export default withRoot(withStyles(styles)(Footer));
