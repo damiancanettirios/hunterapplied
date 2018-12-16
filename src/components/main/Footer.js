@@ -73,6 +73,14 @@ class Footer extends React.Component {
                     Approach
                   </Typography>
                 </Link>
+                <Link to="/blog" style={{ textDecoration: "none" }}>
+                  <Typography
+                    variant="subtitle2"
+                    className={classes.footerLinks}
+                  >
+                    Blog
+                  </Typography>
+                </Link>
               </Grid>
               <Grid item md={3} sm={4} xs={12} className={classes.footerCenter}>
                 <Typography variant="subtitle2" className={classes.footer}>
