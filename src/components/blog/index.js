@@ -49,7 +49,7 @@ class Blog extends React.Component {
           >
             {posts.map(({ fields }, i) => {
               return (
-                <Grid item key={i} xs={4}>
+                <Grid item key={i} md={4} sm={6} xs={12}>
                   <BlogItem key={i} {...fields} />
                 </Grid>
               );

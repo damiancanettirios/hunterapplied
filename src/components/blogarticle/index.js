@@ -13,6 +13,7 @@ import "typeface-roboto";
 
 import Header from "../main/Header";
 import Footer from "../main/Footer";
+import ContactDiv from "../contact/contactDiv";
 
 const BlogArticle = ({ location }) => (
   <div style={{ backgroundColor: "#fff" }}>
@@ -44,7 +45,9 @@ const BlogArticle = ({ location }) => (
           </Typography>
           <IconButton
             component={Link}
-            to={location.state.post.author.fields.facebook}
+            to={`https://www.linkedin.com/in/${
+              location.state.post.author.fields.facebook
+            }`}
           >
             <LinkedinBox fontSize="small" />
           </IconButton>
@@ -58,6 +61,7 @@ const BlogArticle = ({ location }) => (
       </Grid>
       <Markdown source={location.state.post.body} />
     </Grid>
+    <ContactDiv />
     <Footer />
   </div>
 );
