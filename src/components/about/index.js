@@ -7,7 +7,6 @@ import Linkedin from "mdi-material-ui/Linkedin";
 import EmailIcon from "@material-ui/icons/Email";
 import IconButton from "@material-ui/core/IconButton";
 import Hidden from "@material-ui/core/Hidden";
-import { Link } from "@reach/router";
 
 import ContactDiv from "../contact/contactDiv";
 import Footer from "../main/Footer";
@@ -141,18 +140,20 @@ class About extends React.Component {
                         direction="row"
                         alignItems="center"
                       >
-                        <div key={leader.name} style={{ marginRight: 6 }}>
-                          {leader.name}
+                        <div style={{ marginRight: 6 }}>{leader.name}</div>
+                        <div>
+                          <a href={leader.linkedinUrl}>
+                            <IconButton>
+                              <Linkedin />
+                            </IconButton>
+                          </a>
                         </div>
-                        <div key={leader.role}>
-                          <IconButton component={Link} to={leader.linkedinUrl}>
-                            <Linkedin />
-                          </IconButton>
-                        </div>
-                        <div key={leader.index}>
-                          <IconButton component={Link} to={leader.email}>
-                            <EmailIcon />
-                          </IconButton>
+                        <div>
+                          <a href={leader.email}>
+                            <IconButton>
+                              <EmailIcon />
+                            </IconButton>
+                          </a>
                         </div>
                       </Grid>
                     </Typography>

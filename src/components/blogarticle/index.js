@@ -43,20 +43,20 @@ const BlogArticle = ({ location }) => (
           <Typography variant="subtitle1" align="left">
             By: {location.state.post.author.fields.name}
           </Typography>
-          <IconButton
-            component={Link}
-            to={`https://www.linkedin.com/in/${
+          <a
+            href={`https://www.linkedin.com/in/${
               location.state.post.author.fields.facebook
             }`}
           >
-            <LinkedinBox fontSize="small" />
-          </IconButton>
-          <IconButton
-            component={Link}
-            to={`mailto:${location.state.post.author.fields.email}`}
-          >
-            <EmailIcon fontSize="small" />
-          </IconButton>
+            <IconButton>
+              <LinkedinBox fontSize="small" />
+            </IconButton>
+          </a>
+          <a href={`mailto:${location.state.post.author.fields.email}`}>
+            <IconButton>
+              <EmailIcon fontSize="small" />
+            </IconButton>
+          </a>
         </Grid>
       </Grid>
       <Markdown source={location.state.post.body} />
